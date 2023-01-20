@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repositories
 {
-    public class CategoryRepository : ICategoryDAL
+    public class CategoryRepository : IGenericDAL<Category>
     {
         Context context = new Context();
 
