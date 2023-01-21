@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IWriterDAL
+    public interface IWriterDAL : IGenericDAL<Writer>
     {
-        List<Writer> GetAll();
-        void Add(Writer writer);
-        void Update(Writer writer);
-        void Delete(Writer writer);
-        Writer GetById(int id);
     }
 }

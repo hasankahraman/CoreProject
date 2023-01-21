@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface ICommentDAL
+    public interface ICommentDAL : IGenericDAL<Comment>
     {
-        List<Comment> GetAll();
-        void Add(Comment comment);
-        void Update(Comment comment);
-        void Delete(Comment comment);
-        Comment GetById(int id);
     }
 }

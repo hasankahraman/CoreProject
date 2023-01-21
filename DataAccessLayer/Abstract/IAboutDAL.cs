@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IAboutDAL
+    public interface IAboutDAL:IGenericDAL<About>
     {
-        List<About> GetAll();
-        void Add(About about);
-        void Update(About about);
-        void Delete(About about);
-        About GetById(int id);
     }
 }

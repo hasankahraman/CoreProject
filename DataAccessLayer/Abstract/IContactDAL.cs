@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IContactDAL
+    public interface IContactDAL : IGenericDAL<Contact>
     {
-        List<Contact> GetAll();
-        void Add(Contact contact);
-        void Update(Contact contact);
-        void Delete(Contact contact);
-        Contact GetById(int id);
     }
 }
