@@ -14,6 +14,7 @@ namespace BussinessLayer.Abstract
         void DeleteBlog(Blog blog);
         List<Blog> GetAllBlogs();
         Blog GetBlogById(int id);
-        List<Blog> GetAllWithCategory();
-    }
+        List<Blog> GetAllByCategory();
+		List<Blog> GetAllByWriter(int id);
+	}
 }

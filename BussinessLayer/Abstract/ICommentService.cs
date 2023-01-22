@@ -13,6 +13,7 @@ namespace BussinessLayer.Abstract
         void UpdateComment(Comment comment);
         void DeleteComment(Comment comment);
         List<Comment> GetAllComments();
-        Comment GetCommentById(int id);
+		List<Comment> GetAllComments(int id);
+		Comment GetCommentById(int id);
     }
 }

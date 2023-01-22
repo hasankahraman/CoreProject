@@ -13,7 +13,7 @@ namespace DataAccessLayer.EntityFramework
 {
 	public class EFBlogRepository : GenericRepository<Blog>, IBlogDAL
 	{
-		public List<Blog> GetAllWithCategory()
+		public List<Blog> GetAllByCategory()
 		{
 			using (var context = new Context())
 			{
