@@ -14,5 +14,6 @@ namespace BussinessLayer.Abstract
         void DeleteWriter(Writer writer);
         List<Writer> GetAllWriters();
         Writer GetContacttById(int id);
+        bool Login(Writer writer);
     }
 }

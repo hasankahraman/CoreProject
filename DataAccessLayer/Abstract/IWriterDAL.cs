@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface IWriterDAL : IGenericDAL<Writer>
     {
+        bool Login(Writer writer);
     }
 }

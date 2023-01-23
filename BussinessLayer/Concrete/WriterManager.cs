@@ -38,7 +38,12 @@ namespace BussinessLayer.Concrete
 			return _writerDAL.GetById(id);
 		}
 
-		public void UpdateWriter(Writer writer)
+        public bool Login(Writer writer)
+        {
+			return _writerDAL.Login(writer);
+        }
+
+        public void UpdateWriter(Writer writer)
 		{
 			_writerDAL.Update(writer);
 		}
