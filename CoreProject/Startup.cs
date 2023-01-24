@@ -37,7 +37,9 @@ namespace CoreProject
                 config.Filters.Add(new AuthorizeFilter(policy));
             });
 
-            services.AddMvc();
+            services.AddMvc()
+                .AddSessionStateTempDataProvider();
+			services.AddSession(); ;
 
             services.AddAuthentication(
                 CookieAuthenticationDefaults.AuthenticationScheme)
@@ -79,7 +81,7 @@ namespace CoreProject
 
             app.UseSession();
 
-            app.UseRouting();
+			app.UseRouting();
 
             app.UseAuthorization();
 

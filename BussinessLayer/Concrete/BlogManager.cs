@@ -58,5 +58,10 @@ namespace BussinessLayer.Concrete
 		{
 			_blogDAL.Update(blog);
 		}
+
+		public List<Blog> GetLast3Blogs()
+		{
+			return _blogDAL.GetAll().Take(3).ToList();
+		}
 	}
 }
