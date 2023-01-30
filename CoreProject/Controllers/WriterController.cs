@@ -9,6 +9,7 @@ namespace CoreProject.Controllers
 		{
 			return View();
 		}
+		[AllowAnonymous]
 		public IActionResult WriterProfile()
 		{
 			return View();
