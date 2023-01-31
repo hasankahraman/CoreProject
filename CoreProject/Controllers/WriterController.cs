@@ -14,5 +14,15 @@ namespace CoreProject.Controllers
 		{
 			return View();
 		}
-	}
+        [AllowAnonymous]
+        public PartialViewResult PartialWriterNavbar()
+		{
+			return PartialView();
+		}
+        [AllowAnonymous]
+        public PartialViewResult PartialWriterFooter()
+        {
+            return PartialView();
+        }
+    }
 }
