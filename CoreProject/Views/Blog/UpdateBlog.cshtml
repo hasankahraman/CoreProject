@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.Blog
+
+@{
+    ViewData["Title"] = "UpdateBlog";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<h1>Blog Yazısını Düzenle</h1>
+
+@using (Html.BeginForm("Update Blog", "Blog", FormMethod.Post))
+{
+	<form action="#" method="post">
+				@Html.HiddenFor(x=> x.Id, new {@class="form-control"})
+				<br />
+				<label>Başlık</label>
+				@Html.TextBoxFor(x=> x.Title, new {@class="form-control"})
+				@Html.ValidationMessageFor(x=> x.Title,"", new {@class="text-danger"})
+				<br/>
+				<label>Resim</label>
+				@Html.TextBoxFor(x=> x.Image, new {@class="form-control"})
+				@Html.ValidationMessageFor(x=> x.Image,"", new {@class="text-danger"})
+				<br />
+				<label>Küçük Resim</label>
+				@Html.TextBoxFor(x=> x.ThumbnailImage, new {@class="form-control"})
+				@Html.ValidationMessageFor(x=> x.ThumbnailImage,"", new {@class="text-danger"})
+				<br/>
+				<label>Kategori</label>
+				@Html.DropDownListFor(x=> x.CategoryId, (List<SelectListItem>)ViewBag.SelectListValues, new {@class="form-control"})
+				<br/>
+				<label for="validationCustom02">İçerik</label>
+				@Html.TextAreaFor(x=> x.Content,10,10, new {@class="form-control"})
+				@Html.ValidationMessageFor(x=> x.Content,"", new {@class="text-danger"})
+				<br/>
+		<button type="submit" class="btn btn-success submit mb-4">Güncelle</button>
+	</form>
+}

@@ -78,5 +78,40 @@ namespace CoreProject.Controllers
             return RedirectToAction("BlogListByWriter");
 
         }
+        [HttpGet]
+        public IActionResult UpdateBlog(int id)
+        {
+            CategoryManager catManager = new CategoryManager(new EFCategoryRepository());
+            List<SelectListItem> categories = (from x in catManager.GetAll()
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.Name,
+                                                   Value = x.Id.ToString()
+                                               }).ToList();
+            ViewBag.SelectListValues = categories;
+
+            var blogToUpdate = manager.GetById(id);
+            return View(blogToUpdate);
+        }
+        [HttpPost]
+        public IActionResult UpdateBlog(Blog blog)
+        {
+            BlogValidator validator = new BlogValidator();
+            ValidationResult validationResult = validator.Validate(blog);
+
+            if (validationResult.IsValid)
+            {
+                manager.Update(blog);
+                return RedirectToAction("BlogListByWriter", "Blog");
+            }
+            else
+            {
+                foreach (var item in validationResult.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+                return View();
+            }
+        }
     }
 }
