@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace BussinessLayer.Abstract
 {
-    public interface IContactService
+    public interface IContactService : IGenericService<Contact>
     {
-        void AddContact(Contact contact);
-        void UpdateContact(Contact contact);
-        void DeleteContact(Contact contact);
-        List<Contact> GetAllContacts();
-        Contact GetContacttById(int id);
+       
     }
 }

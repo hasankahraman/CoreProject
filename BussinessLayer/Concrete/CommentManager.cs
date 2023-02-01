@@ -18,34 +18,32 @@ namespace BussinessLayer.Concrete
 			_commentDAL = commentDAL;
 		}
 
-		public void AddComment(Comment comment)
-		{
-			_commentDAL.Add(comment);
-		}
+        public void Add(Comment t)
+        {
+            _commentDAL.Add(t);
+        }
 
-		public void DeleteComment(Comment comment)
-		{
-			_commentDAL.Delete(comment);
-		}
+        public void Delete(Comment t)
+        {
+            _commentDAL.Delete(t);
+        }
+        public List<Comment> GetAll(int id)
+        {
+            return _commentDAL.GetAll(x => x.BlogId == id);
+        }
 
-		public List<Comment> GetAllComments(int id)
-		{
-			return _commentDAL.GetAll(x=> x.BlogId==id);
-		}
+        public List<Comment> GetAll()
+        {
+            return _commentDAL.GetAll();
+        }
 
-		public List<Comment> GetAllComments()
-		{
-			return _commentDAL.GetAll();
-		}
-
-		public Comment GetCommentById(int id)
-		{
-			return _commentDAL.GetById(id);
-		}
-
-		public void UpdateComment(Comment comment)
-		{
-			_commentDAL.Update(comment);
-		}
+        public Comment GetById(int id)
+        {
+            return _commentDAL.GetById(id);
+        }
+        public void Update(Comment t)
+        {
+            _commentDAL.Update(t);
+        }
 	}
 }

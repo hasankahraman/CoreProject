@@ -24,12 +24,12 @@ namespace CoreProject.Controllers
 			comment.CreatedAt = DateTime.Parse(DateTime.Now.ToShortDateString());
 			comment.Status = true;
 			comment.BlogId = 2;
-			manager.AddComment(comment);
+			manager.Add(comment);
 			return PartialView();
 		}
 		public PartialViewResult PartialGetCommentsOfBlog(int id)
 		{
-			var list = manager.GetAllComments(id);
+			var list = manager.GetAll(id);
 			return PartialView(list);
 		}
 	}

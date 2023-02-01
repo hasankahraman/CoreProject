@@ -27,7 +27,7 @@ namespace CoreProject.Controllers
 
 			if (validationResult.IsValid)
 			{
-				manager.AddWriter(writer);
+				manager.Add(writer);
 				return RedirectToAction("Index", "Blog");
 			}else
 			{

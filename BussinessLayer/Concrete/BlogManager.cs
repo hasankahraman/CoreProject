@@ -18,50 +18,45 @@ namespace BussinessLayer.Concrete
 		{
 			_blogDAL = blogDAL;
 		}
-
-		public void AddBlog(Blog blog)
-		{
-			_blogDAL.Add(blog);
-		}
-
-		public void DeleteBlog(Blog blog)
-		{
-			_blogDAL.Delete(blog);
-		}
-
-		public List<Blog> GetAllBlogs()
-		{
-			return _blogDAL.GetAll();
-		}
-
-		public List<Blog> GetAllBlogs(int id)
+        public List<Blog> GetAll()
+        {
+            return _blogDAL.GetAll();
+        }
+        public List<Blog> GetAll(int id)
 		{
 			return _blogDAL.GetAll(x=> x.Id == id);
 		}
-
-		public List<Blog> GetAllByCategory()
+		public List<Blog> GetAllWithCategory()
 		{
-			return _blogDAL.GetAllByCategory();
+			return _blogDAL.GetAllWithCategory();
 		}
-
 		public List<Blog> GetAllByWriter(int id)
 		{
 			return _blogDAL.GetAll(x => x.WriterId == id);
 		}
-
-		public Blog GetBlogById(int id)
-		{
-			return _blogDAL.GetById(id);
-		}
-
-		public void UpdateBlog(Blog blog)
-		{
-			_blogDAL.Update(blog);
-		}
-
 		public List<Blog> GetLast3Blogs()
 		{
 			return _blogDAL.GetAll().Take(3).ToList();
+		}
+        public void Add(Blog t)
+        {
+            _blogDAL.Add(t);
+        }
+        public void Update(Blog t)
+        {
+			_blogDAL.Update(t);
+        }
+        public void Delete(Blog t)
+        {
+			_blogDAL.Delete(t);
+        }
+        public Blog GetById(int id)
+        {
+            return _blogDAL.GetById(id);
+        }
+		public List<Blog> GetAllWithCategoryByWriter(int writerId)
+		{
+			return _blogDAL.GetAllWithCategoryByWriter(writerId);
 		}
 	}
 }

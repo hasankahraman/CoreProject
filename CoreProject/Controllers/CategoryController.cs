@@ -9,7 +9,7 @@ namespace CoreProject.Controllers
         CategoryManager manager = new CategoryManager(new EFCategoryRepository());
         public IActionResult Index()
         {
-            var categoryList = manager.GetAllCategories();
+            var categoryList = manager.GetAll();
             return View(categoryList);
         }
     }

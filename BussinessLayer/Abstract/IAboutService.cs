@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 
 namespace BussinessLayer.Abstract
 {
-    public interface IAboutService
+    public interface IAboutService : IGenericService<About>
     {
-        void AddAbout(About about);
-        void UpdateAbout(About about);
-        void DeleteAbout(About about);
-        List<About> GetAllAbouts();
-        About GetAboutById(int id);
     }
 }

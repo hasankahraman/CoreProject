@@ -12,35 +12,29 @@ namespace BussinessLayer.Concrete
 	public class ContactManager : IContactService
 	{
 		IContactDAL _contactDAL;
-
 		public ContactManager(IContactDAL contactDAL)
 		{
 			_contactDAL = contactDAL;
 		}
-
-		public void AddContact(Contact contact)
-		{
-			_contactDAL.Add(contact);
-		}
-
-		public void DeleteContact(Contact contact)
-		{
-			_contactDAL.Delete(contact);
-		}
-
-		public List<Contact> GetAllContacts()
-		{
-			return _contactDAL.GetAll();
-		}
-
-		public Contact GetContacttById(int id)
-		{
-			return _contactDAL.GetById(id);
-		}
-
-		public void UpdateContact(Contact contact)
-		{
-			_contactDAL.Update(contact);
-		}
+        public void Add(Contact t)
+        {
+            _contactDAL.Add(t);
+        }
+        public void Delete(Contact t)
+        {
+            _contactDAL.Delete(t);
+        }
+        public List<Contact> GetAll()
+        {
+            return _contactDAL.GetAll();
+        }
+        public Contact GetById(int id)
+        {
+            return _contactDAL.GetById(id);
+        }
+        public void Update(Contact t)
+        {
+            _contactDAL.Update(t);
+        }
 	}
 }

@@ -13,7 +13,7 @@ namespace CoreProject.Controllers
 		[HttpGet]
 		public IActionResult Index()
 		{
-			var list = manager.GetAllContacts();
+			var list = manager.GetAll();
 			return View(list);
 		}
 		[HttpPost]
@@ -21,7 +21,7 @@ namespace CoreProject.Controllers
 		{
 			contact.CreatedAt = DateTime.Parse(DateTime.Now.ToShortDateString());
 			contact.Status = true;
-			manager.AddContact(contact);
+			manager.Add(contact);
 			return RedirectToAction("Index");
 		}
 	}

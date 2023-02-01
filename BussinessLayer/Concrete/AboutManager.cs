@@ -17,30 +17,25 @@ namespace BussinessLayer.Concrete
 		{
 			_aboutDAL = aboutDAL;
 		}
-
-		public void AddAbout(About about)
-		{
-			_aboutDAL.Add(about);
-		}
-
-		public void DeleteAbout(About about)
-		{
-			_aboutDAL.Delete(about);
-		}
-
-		public About GetAboutById(int id)
+        public void Add(About t)
+        {
+            _aboutDAL.Add(t);
+        }
+        public void Delete(About t)
+        {
+            _aboutDAL.Delete(t);
+        }
+		public About GetById(int id)
 		{
 			return _aboutDAL.GetById(id);
 		}
-
-		public List<About> GetAllAbouts()
-		{
-			return _aboutDAL.GetAll();
-		}
-
-		public void UpdateAbout(About about)
-		{
-			_aboutDAL.Update(about);
-		}
+        public List<About> GetAll()
+        {
+            return _aboutDAL.GetAll();
+        }
+        public void Update(About t)
+        {
+            _aboutDAL.Update(t);
+        }
 	}
 }

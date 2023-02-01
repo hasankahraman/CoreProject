@@ -1,0 +1,36 @@
+﻿@using EntityLayer.Concrete
+@model List<Blog>
+@{
+    ViewData["Title"] = "BlogListByWriter";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<h1>Yazarın Blogları</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Başlık</th>
+        <th>Oluşturulma Tarihi</th>
+        <th>Kategori</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Düzenle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Title</td>
+            <td>@(((DateTime)item.CreatedAt).ToString("dd.MMM.yyyy"))</td>
+            <td>@item.Category.Name</td>
+            <td>@item.Status</td>
+            <td><a href="/Blog/DeleteBlog/@item.Id" class="btn btn-danger"></a></td>
+            <td><a href="#" class="btn btn-warning"></a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Blog/CreateNewBlog/" class="btn btn-primary">Yeni Blog Oluştur</a>
+

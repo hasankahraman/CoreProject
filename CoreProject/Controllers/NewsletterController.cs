@@ -18,7 +18,7 @@ namespace CoreProject.Controllers
 		public PartialViewResult SubscribeNewsletter(Newsletter newsletter)
 		{
 			newsletter.Status = true;
-			manager.AddNewsletter(newsletter);
+			manager.Add(newsletter);
 			return PartialView();
 		}
 	}

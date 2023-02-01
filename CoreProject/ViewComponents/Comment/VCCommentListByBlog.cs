@@ -9,7 +9,7 @@ namespace CoreProject.ViewComponents.Comment
 		CommentManager manager = new CommentManager(new EFCommentRepository());
 		public IViewComponentResult Invoke(int id)
 		{
-			var commentList = manager.GetAllComments(id);
+			var commentList = manager.GetAll(id);
 			return View(commentList);
 		}
 	}

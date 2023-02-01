@@ -9,7 +9,7 @@ namespace CoreProject.Controllers
 		AboutManager manager = new AboutManager(new EFAboutRepository());
 		public IActionResult Index()
 		{
-			var list = manager.GetAllAbouts();
+			var list = manager.GetAll();
 			return View(list);
 		}
 

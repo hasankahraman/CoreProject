@@ -18,29 +18,27 @@ namespace BussinessLayer.Concrete
 			_newsletterDAL = newsletterDAL;
 		}
 
-		public void AddNewsletter(Newsletter newsletter)
-		{
-			_newsletterDAL.Add(newsletter);
-		}
+        public void Add(Newsletter t)
+        {
+            _newsletterDAL.Add(t);
+        }
+        public void Delete(Newsletter t)
+        {
+            _newsletterDAL.Delete(t);
 
-		public void DeleteNewsletter(Newsletter newsletter)
-		{
-			_newsletterDAL.Delete(newsletter);
-		}
+        }
+        public List<Newsletter> GetAll()
+        {
+            return _newsletterDAL.GetAll();
+        }
 
-		public List<Newsletter> GetAllNewsletters()
-		{
-			return _newsletterDAL.GetAll();
-		}
-
-		public Newsletter GetNewsletterById(int id)
-		{
-			return _newsletterDAL.GetById(id);
-		}
-
-		public void UpdateNewsletter(Newsletter newsletter)
-		{
-			_newsletterDAL.Update(newsletter);
-		}
+        public Newsletter GetById(int id)
+        {
+            return _newsletterDAL.GetById(id);
+        }
+        public void Update(Newsletter t)
+        {
+            _newsletterDAL.Update(t);
+        }
 	}
 }
