@@ -17,7 +17,8 @@ namespace CoreProject.Controllers
     {
         
         BlogManager manager = new BlogManager(new EFBlogRepository());
-        public IActionResult Index()
+		CategoryManager catManager = new CategoryManager(new EFCategoryRepository());
+		public IActionResult Index()
         {
             var list = manager.GetAllWithCategory();
             return View(list);
@@ -37,7 +38,6 @@ namespace CoreProject.Controllers
         [HttpGet]
         public IActionResult CreateNewBlog()
         {
-			CategoryManager catManager = new CategoryManager(new EFCategoryRepository());
             List<SelectListItem> categories = (from x in catManager.GetAll()
                                                select new SelectListItem
                                                { Text = x.Name,
@@ -81,7 +81,7 @@ namespace CoreProject.Controllers
         [HttpGet]
         public IActionResult UpdateBlog(int id)
         {
-            CategoryManager catManager = new CategoryManager(new EFCategoryRepository());
+
             List<SelectListItem> categories = (from x in catManager.GetAll()
                                                select new SelectListItem
                                                {
@@ -101,7 +101,10 @@ namespace CoreProject.Controllers
 
             if (validationResult.IsValid)
             {
-                manager.Update(blog);
+				blog.CreatedAt = DateTime.Parse(DateTime.Now.ToShortDateString());
+				blog.Status = true;
+				blog.WriterId = 1;
+				manager.Update(blog);
                 return RedirectToAction("BlogListByWriter", "Blog");
             }
             else
