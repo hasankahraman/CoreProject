@@ -1,0 +1,19 @@
+--CREATE TRIGGER AddBlogIdInBlogRatingsTable
+--ON Blogs
+--AFTER INSERT
+--AS
+--DECLARE @Id int
+--SELECT @Id = Id FROM INSERTED
+--INSERT INTO BlogRatings (BlogId,BlogTotalScore, RatingCount, RatingAverage)
+--VALUES (@Id,0,0,0)
+
+--CREATE TRIGGER AddScoreFromCommentToBlogRatingsTable
+--ON Comments
+--AFTER INSERT
+--AS
+--DECLARE @Id int
+--DECLARE @Score int
+--DECLARE @RatingCount int
+--SELECT @Id = BlogId, @Score = BlogScore FROM INSERTED
+--UPDATE BlogRatings SET BlogTotalScore = BlogTotalScore + @Score, RatingCount +=1, RatingAverage = BlogTotalScore/RatingCount
+--WHERE BlogId = @Id

@@ -34,6 +34,12 @@ namespace BussinessLayer.Concrete
         {
             return _writerDAL.GetById(id);
         }
+
+        public List<Writer> GetWriterById(int id)
+        {
+            return _writerDAL.GetAll(x => x.Id == id);
+        }
+
         public bool Login(Writer writer)
         {
 			return _writerDAL.Login(writer);

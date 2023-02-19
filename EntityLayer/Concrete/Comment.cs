@@ -18,5 +18,6 @@ namespace EntityLayer.Concrete
         public bool Status { get; set; }
         public int BlogId { get; set; }
         public Blog Blog { get; set; }
+        public int BlogScore { get; set; }
     }
 }

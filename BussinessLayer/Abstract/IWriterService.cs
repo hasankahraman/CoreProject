@@ -10,5 +10,6 @@ namespace BussinessLayer.Abstract
     public interface IWriterService : IGenericService<Writer>
     {
         bool Login(Writer writer);
+        List<Writer> GetWriterById(int id);
     }
 }
