@@ -92,4 +92,8 @@
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\ImageFiles\" />
+  </ItemGroup>
+
 </Project>
