@@ -1,41 +1,34 @@
-﻿<div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+﻿@using EntityLayer.Concrete
+@model List<Notification>
+
+<div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
     <h6 class="p-3 mb-0">Bildirimler</h6>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item preview-item">
-        <div class="preview-thumbnail">
-            <div class="preview-icon bg-success">
-                <i class="mdi mdi-calendar"></i>
+    @foreach (var item in Model)
+    {
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+                <div class="@item.TypeColor">
+                    <i class="@item.TypeSymbol"></i>
+                </div>
             </div>
-        </div>
-        <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-            <h6 class="preview-subject font-weight-normal mb-1">Bugünün Olayları</h6>
-            <p class="text-gray ellipsis mb-0"> Bugünkü planlarınız hakkında ufak bir hatırlatma... </p>
-        </div>
-    </a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item preview-item">
-        <div class="preview-thumbnail">
-            <div class="preview-icon bg-warning">
-                <i class="mdi mdi-settings"></i>
+            <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                <h6 class="preview-subject font-weight-normal mb-1">@item.Type</h6>
+                <p class="text-gray ellipsis mb-0"> @item.Detail </p>
             </div>
-        </div>
-        <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-            <h6 class="preview-subject font-weight-normal mb-1">Ayarlar</h6>
-            <p class="text-gray ellipsis mb-0"> Panelimi Güncelle </p>
-        </div>
-    </a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item preview-item">
-        <div class="preview-thumbnail">
-            <div class="preview-icon bg-info">
-                <i class="mdi mdi-link-variant"></i>
-            </div>
-        </div>
-        <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-            <h6 class="preview-subject font-weight-normal mb-1">Yönetici Olarak Çalıştır.</h6>
-            <p class="text-gray ellipsis mb-0"> Wouww yeni yönetici! </p>
-        </div>
-    </a>
+        </a>
+    }
     <div class="dropdown-divider"></div>
     <h6 class="p-3 mb-0 text-center">Tüm bildirimleri gör.</h6>
 </div>
+
+
+<script src="~/writer/assets/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="~/writer/assets/js/off-canvas.js"></script>
+<script src="~/writer/assets/js/hoverable-collapse.js"></script>
+<script src="~/writer/assets/js/misc.js"></script>
+<script src="~/writer/assets/js/file-upload.js"></script>

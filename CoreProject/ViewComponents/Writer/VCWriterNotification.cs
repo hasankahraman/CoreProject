@@ -6,10 +6,11 @@ namespace CoreProject.ViewComponents.Writer
 {
     public class VCWriterNotification : ViewComponent
     {
-        WriterManager manager = new WriterManager(new EFWriterRepository());
+        NotificationManager manager = new NotificationManager(new EFNotificationRepository());
         public IViewComponentResult Invoke()
         {
-            return View();
+            var values = manager.GetAll();
+            return View(values);
         }
     }
 }
